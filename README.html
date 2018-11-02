@@ -1,0 +1,305 @@
+<html>
+      <head>
+        <meta charset="UTF-8">
+        <title>README.md</title>
+      </head>
+      <body>
+        <h1 id="project-overview">Project Overview</h1>
+<h2 id="project-schedule">Project Schedule</h2>
+<table>
+<thead>
+<tr>
+<th>Day</th>
+<th>Deliverable</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Monday</td>
+<td>Project Outline &amp; Wireframes</td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>Tuesday</td>
+<td>Project Proposal / API Calls / Venue Container</td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>Wednesday</td>
+<td>API Calls / Map</td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>Thursday</td>
+<td>API Calls / Nav / Header / Venue Type</td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>Friday</td>
+<td>Footer</td>
+<td>Incomplete</td>
+</tr>
+<tr>
+<td>Saturday</td>
+<td>Styling</td>
+<td>Incomplete</td>
+</tr>
+<tr>
+<td>Sunday</td>
+<td>Finishing Touches</td>
+<td>Incomplete</td>
+</tr>
+</tbody>
+</table>
+<h2 id="project-description">Project Description</h2>
+<p>My project will be called &quot;&quot; and the purpose of this web application is to save time. Students here at General Assembly usually average a 1 hour break for lunch but have hundreds of options to choose from because we&#39;re located in the city. &#39;&#39; would be used to see which venues have long/short lines so you know wether it&#39;s worth going across the street to the corner deli or to Wok-to-Walk down by Union Square. No more guessing which venue has the longer line, you just simply log-on and see whats near you. Another instance where this application comes in handy is if it&#39;s a weekend night and you really want to get some drinks but the weather is playing in your favor. You can login and see the count of users at a certain bar, the more users means the more populated the bar is. So it might be worth taking that $10 uber to your favorite late-night spot!</p>
+<h2 id="wireframes">Wireframes</h2>
+<p><a href="https://res.cloudinary.com/aaronculp/image/upload/v1539633173/Project%202%20Wireframes/IMG_4340.jpg">Wireframe Outline</a>
+[Layout Wireframe] &#39;<a href="https://res.cloudinary.com/aaronculp/image/upload/v1539633176/Project%202%20Wireframes/IMG_4345.jpg&#39;">https://res.cloudinary.com/aaronculp/image/upload/v1539633176/Project%202%20Wireframes/IMG_4345.jpg&#39;</a>
+[Venue Container Wireframe] &#39;<a href="https://res.cloudinary.com/aaronculp/image/upload/v1539633173/Project%202%20Wireframes/IMG_4344.jpg&#39;">https://res.cloudinary.com/aaronculp/image/upload/v1539633173/Project%202%20Wireframes/IMG_4344.jpg&#39;</a>
+[MVP Outline] &#39;<a href="https://res.cloudinary.com/aaronculp/image/upload/v1539633173/Project%202%20Wireframes/IMG_4343.jpg&#39;">https://res.cloudinary.com/aaronculp/image/upload/v1539633173/Project%202%20Wireframes/IMG_4343.jpg&#39;</a>
+[Post-MVP Outline] &#39;<a href="https://res.cloudinary.com/aaronculp/image/upload/v1539633173/Project%202%20Wireframes/IMG_4344.jpg&#39;">https://res.cloudinary.com/aaronculp/image/upload/v1539633173/Project%202%20Wireframes/IMG_4344.jpg&#39;</a>
+[Components Outline] &#39;<a href="https://res.cloudinary.com/aaronculp/image/upload/v1539633176/Project%202%20Wireframes/IMG_4347.jpg&#39;">https://res.cloudinary.com/aaronculp/image/upload/v1539633176/Project%202%20Wireframes/IMG_4347.jpg&#39;</a></p>
+<h2 id="priority-matrix">Priority Matrix</h2>
+<p>[Components Outline] &#39;<a href="https://res.cloudinary.com/aaronculp/image/upload/v1539633176/Project%202%20Wireframes/IMG_4346.jpg&#39;">https://res.cloudinary.com/aaronculp/image/upload/v1539633176/Project%202%20Wireframes/IMG_4346.jpg&#39;</a>
+[Priority Matrix] &#39;<a href="https://res.cloudinary.com/aaronculp/image/upload/v1539633176/Project%202%20Wireframes/IMG_4348.jpg&#39;">https://res.cloudinary.com/aaronculp/image/upload/v1539633176/Project%202%20Wireframes/IMG_4348.jpg&#39;</a></p>
+<h3 id="mvp-postmvp-5min">MVP/PostMVP - 5min</h3>
+<p>The functionality has been divided into two separate lists: MVP and PostMVP.</p>
+<h4 id="mvp">MVP</h4>
+<ul>
+<li>Header</li>
+<li>API Calls</li>
+<li>1 Venue Container</li>
+<li>1 Venue Type</li>
+<li>1 Like Button</li>
+</ul>
+<h4 id="postmvp">PostMVP</h4>
+<ul>
+<li>Navbar</li>
+<li>Google Map</li>
+<li>Footer</li>
+</ul>
+<h2 id="react-architectural-design">React Architectural Design</h2>
+<p>[Components Outline] &#39;<a href="https://res.cloudinary.com/aaronculp/image/upload/v1539633176/Project%202%20Wireframes/IMG_4347.jpg&#39;">https://res.cloudinary.com/aaronculp/image/upload/v1539633176/Project%202%20Wireframes/IMG_4347.jpg&#39;</a></p>
+<h2 id="functional-components">Functional Components</h2>
+<p>Based on the initial logic defined in the previous sections try and breakdown the logic further into stateless/stateful components. </p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:center">Stateless/Stateful</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nav</td>
+<td style="text-align:center">Render Navbar with dropdown option to change Venue Type</td>
+<td style="text-align:center">Stateful</td>
+</tr>
+<tr>
+<td>Header</td>
+<td style="text-align:center">Render Venue Type</td>
+<td style="text-align:center">Stateless</td>
+</tr>
+<tr>
+<td>App</td>
+<td style="text-align:center">Render Nav / Header / VenueContainer / VenueType / Map / Footer</td>
+<td style="text-align:center">Stateful</td>
+</tr>
+<tr>
+<td>VenueType</td>
+<td style="text-align:center">Render Venue Type. Either Food / Drinks</td>
+<td style="text-align:center">Stateful</td>
+</tr>
+<tr>
+<td>VenueContainer</td>
+<td style="text-align:center">Render Mutliple Venue Containers which will have Venue Name, Address, IMG, Like Button</td>
+<td style="text-align:center">Stateful</td>
+</tr>
+<tr>
+<td>Map</td>
+<td style="text-align:center">Render Google Map</td>
+<td style="text-align:center">Stateful</td>
+</tr>
+<tr>
+<td>Footer</td>
+<td style="text-align:center">Render Brand Name</td>
+<td style="text-align:center">Stateless</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nav">Nav</h4>
+<hr>
+<p>Renders dropdown link option to switch from Food/Drink Venue Types</p>
+<h4 id="header">Header</h4>
+<hr>
+<p>Renders Venue Type that user is currently in.</p>
+<h4 id="app">APP</h4>
+<hr>
+<p>Renders all children components </p>
+<h4 id="venuetype">VenueType</h4>
+<hr>
+<p>Renders Venue Type by either: Food or Drink</p>
+<h4 id="venuecontainer">VenueContainer</h4>
+<hr>
+<p>Renders a container with Venue Title, Venue IMG, Venue Address, and Like Button/User Counter</p>
+<h4 id="map">Map</h4>
+<hr>
+<p>Renders Google Map with Venue Location</p>
+<h4 id="footer">Footer</h4>
+<hr>
+<p>Renders Personal Brand Icon</p>
+<h2 id="functional-components">Functional Components</h2>
+<hr>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th style="text-align:center">Priority</th>
+<th style="text-align:center">Estimated Time MVP</th>
+<th style="text-align:center">Estimated Time Post MVP</th>
+<th style="text-align:center">Time Invetsted</th>
+<th style="text-align:center">Actual Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Navbar</td>
+<td style="text-align:center">L</td>
+<td style="text-align:center">--</td>
+<td style="text-align:center">2hrs</td>
+<td style="text-align:center">3hrs</td>
+<td style="text-align:center">3hrs</td>
+</tr>
+<tr>
+<td>Header</td>
+<td style="text-align:center">H</td>
+<td style="text-align:center">2hrs</td>
+<td style="text-align:center">--</td>
+<td style="text-align:center">1hrs</td>
+<td style="text-align:center">1hrs</td>
+</tr>
+<tr>
+<td>Map</td>
+<td style="text-align:center">L</td>
+<td style="text-align:center">--</td>
+<td style="text-align:center">2hrs</td>
+<td style="text-align:center">1hrs</td>
+<td style="text-align:center">1hrs</td>
+</tr>
+<tr>
+<td>Venue Container</td>
+<td style="text-align:center">H</td>
+<td style="text-align:center">5hrs</td>
+<td style="text-align:center">--</td>
+<td style="text-align:center">6hrs</td>
+<td style="text-align:center">6hrs</td>
+</tr>
+<tr>
+<td>Venue Type</td>
+<td style="text-align:center">H</td>
+<td style="text-align:center">5hrs</td>
+<td style="text-align:center">--</td>
+<td style="text-align:center">1hr</td>
+<td style="text-align:center">1hr</td>
+</tr>
+<tr>
+<td>Footer</td>
+<td style="text-align:center">L</td>
+<td style="text-align:center">--</td>
+<td style="text-align:center">2hrs</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>API Calls</td>
+<td style="text-align:center">H</td>
+<td style="text-align:center">7hrs</td>
+<td style="text-align:center">--</td>
+<td style="text-align:center">6hrs</td>
+<td style="text-align:center">6hrs</td>
+</tr>
+<tr>
+<td>Refactoring</td>
+<td style="text-align:center">H</td>
+<td style="text-align:center">--</td>
+<td style="text-align:center">--</td>
+<td style="text-align:center">4hrs</td>
+<td style="text-align:center">--</td>
+</tr>
+<tr>
+<td>Total</td>
+<td style="text-align:center">--</td>
+<td style="text-align:center">19hrs</td>
+<td style="text-align:center">6hrs</td>
+<td style="text-align:center">15hrs</td>
+</tr>
+</tbody>
+</table>
+<h2 id="helper-functions">Helper Functions</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nav Component</td>
+<td style="text-align:center">Reusable Navbar Component</td>
+</tr>
+<tr>
+<td>Header</td>
+<td style="text-align:center">Reusable Header Component</td>
+</tr>
+<tr>
+<td>Footer</td>
+<td style="text-align:center">Reusabe Footer Component</td>
+</tr>
+<tr>
+<td>Venue Container</td>
+<td style="text-align:center">Reusable Single UI Component</td>
+</tr>
+<tr>
+<td>Footer</td>
+<td style="text-align:center">Reusable Personal Brand Component</td>
+</tr>
+<tr>
+<td>Map</td>
+<td style="text-align:center">Reusable Map API Call Component</td>
+</tr>
+</tbody>
+</table>
+<h2 id="additional-libraries">Additional Libraries</h2>
+<p>API calls |
+Foursquare API = &#39;<a href="https://developer.foursquare.com/docs&#39;">https://developer.foursquare.com/docs&#39;</a> |
+Google Maps API = &#39;<a href="https://cloud.google.com/maps-platform/&#39;">https://cloud.google.com/maps-platform/&#39;</a></p>
+<h2 id="code-snippet">Code Snippet</h2>
+<p>Use this section to include a brief code snippet of functionality that you are proud of an a brief description  </p>
+<pre><code>  render() {
+    return (
+      &lt;div className=&quot;App&quot;&gt;
+      &lt;Header
+      handleInputChange={this.handleInputChange}
+      onFormSubmit={this.onFormSubmit}
+      buttonInput={this.state.buttonInput}/&gt;
+      &lt;VenueListings
+      venues={this.state.venues}
+      buttonInput={this.state.buttonInput}/&gt;
+      &lt;/div&gt;
+    );
+  }
+
+</code></pre><h2 id="change-log">Change Log</h2>
+<p> Use this section to document what changes were made and the reasoning behind those changes.  </p>
+<h2 id="issues-and-resolutions">Issues and Resolutions</h2>
+<p>So far: 
+I couldn&#39;t get my API to change with the input, my setState was the error -- Fixed: I passed OnFormSubmit to my Form Component which would cause a re-render with the new input value.</p>
+<h3 id="sample-">SAMPLE.....</h3>
+<p><strong>ERROR</strong>: app.js:34 Uncaught SyntaxError: Unexpected identifier<br><strong>RESOLUTION</strong>: Missing comma after first object in sources {} object</p>
+
+      </body>
+    </html>
