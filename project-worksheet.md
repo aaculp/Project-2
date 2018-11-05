@@ -96,6 +96,9 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Pose NPM Package| L | 3hrs| 0hrs | 0hrs |
 | Total | L | 71hrs| 0hrs | 0hrs |
 
+## ERD
+
+Database structure: https://imgur.com/gFYIyiu
 
 
 ## Helper Functions
