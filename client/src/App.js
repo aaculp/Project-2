@@ -5,9 +5,7 @@ import VenueListings from './VenueListing'
 import Header from './Header'
 import Footer from './Footer'
 import Login from './Login'
-
-
-
+import Favorites from './Favorites'
 
 class App extends Component {
   constructor(props){
@@ -57,6 +55,7 @@ class App extends Component {
             venueId={this.state.venueId}
           />} />
           <Route path='/' component={Login} />
+          <Route path='/favorites' component={Favorites} />
           <Footer />
         </div>
       </Router>
