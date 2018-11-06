@@ -1,56 +1,56 @@
-const db = require('../db/config');
+Const db = require('../db/seeds/config');
 
 const Places = {};
 
 Places.findAll = () => {
-  return db.query(`SELECT * FROM venues`);
+  return db.query(`SELECT * FROM fav`);
 };
 
 Places.findById = id => {
   return db.oneOrNone(
     `
-    SELECT * FROM venues
+    SELECT * FROM fav
     WHERE id = $1
   `,
     [id]
   );
 };
 
-Places.create = venues => {
+Places.create = fav => {
   return db.one(
     `
-    INSERT INTO venues
-    (flavor, description, rating, url)
+    INSERT INTO fav
+    (venue_name, venue_address, reviews, rating)
     VALUES ($1, $2, $3, $4)
     RETURNING *
   `,
-    [icecream.flavor, icecream.description, icecream.rating, icecream.url]
+    [fav.venue_name, fav.venue_address, fav.reviews, fav.rating]
   );
 };
 
-Places.update = (icecream, id) => {
+Places.update = (fav, id) => {
   return db.one(
     `
-    UPDATE icecream SET
-      flavor = $1,
-      description = $2,
-      rating = $3,
-      url = $4
+    UPDATE fav SET
+      venue_name = $1,
+      venue_address = $2,
+      reviews = $3,
+      rating = $4
     WHERE id = $5
     RETURNING *
   `,
-    [icecream.flavor, icecream.description, icecream.rating, icecream.url, id]
+    [fav.venue_name, fav.venue_address, fav.reviews, fav.rating, id]
   );
 };
 
 Places.destroy = id => {
   return db.none(
     `
-    DELETE FROM icecream
+    DELETE FROM fav
     WHERE id = $1
   `,
     [id]
   );
 };
 
-module.exports = Icecream;
+module.exports = Places;
