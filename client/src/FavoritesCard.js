@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 
+
 class FavoritesCard extends Component{
 
+
+
 render(){
+
   return(
     <section>
       <div>
@@ -19,7 +23,7 @@ render(){
           <h3>Your Rating</h3>
           <p>FAV RATING HERE</p>
         </div>
-        <div class="edit_delete_buttons">
+        <div className="edit_delete_buttons">
           <button>EDIT</button>
           <button>DELETE</button>
         </div>

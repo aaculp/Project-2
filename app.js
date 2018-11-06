@@ -15,6 +15,9 @@ app.get('/', (req, res) => {
   res.send('Hello Welcome To Group JAS Project!');
 });
 
+const placesRoutes = require('./routes/routes');
+app.use('/places', placesRoutes);
+
 app.use('*', (req, res) => {
   res.status(400).json({
     message: 'Endpoint not found!',

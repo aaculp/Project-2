@@ -1,4 +1,4 @@
-const Places = require('../models/places');
+const Places = require('../model/places');
 
 const placesController = {};
 

@@ -1,4 +1,4 @@
-Const db = require('../db/seeds/config');
+const db = require('../db/config');
 
 const Places = {};
 
