@@ -16,10 +16,10 @@ Places.findById = id => {
   );
 };
 
-Places.create = icecream => {
+Places.create = venues => {
   return db.one(
     `
-    INSERT INTO icecream
+    INSERT INTO venues
     (flavor, description, rating, url)
     VALUES ($1, $2, $3, $4)
     RETURNING *
