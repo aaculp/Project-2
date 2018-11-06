@@ -1,10 +1,10 @@
 const express = require('express');
-const app = express();
-const port = process.env.port || 3001;
-
 const logger = require('morgan');
 const path = require('path');
 const bodyParser = require('body-parser');
+
+const app = express();
+const port = process.env.port || 3001;
 
 app.use(logger('dev'));
 app.use(express.static('client/build'))
