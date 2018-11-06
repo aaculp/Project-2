@@ -1,13 +1,13 @@
-const Places = require('../models/places');
+const Places = require('../model/places');
 
 const placesController = {};
 
 placesController.index = (req, res) => {
   Places.findAll()
-    .then(favs => {
+    .then(fav => {
       res.json({
         message: 'ok',
-        data: favs,
+        data: fav,
       });
     })
     .catch(err => {
