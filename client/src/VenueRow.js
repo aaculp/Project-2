@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class VenueRow extends Component {
   state = {
   venueId: this.props.venuePath.id,
-  size: '36x36'
+  size: '36x36',
   }
 
   // componentDidMount() {
@@ -23,16 +23,18 @@ class VenueRow extends Component {
   //   })
   // }
 
+
   render() {
     return(
       <div className="venue-container">
-        <div className="venue-container-header">
-          <h1>{this.props.venuePath.name}</h1>
-        </div>
+
         <img />
         <div className="venue-container-footer">
+          <p> Name:{this.props.venuePath.name}</p>
           <p className='venue-address'>Address: {this.props.venuePath.location.address}</p>
           <p className='venue-count'>People in Venue: {this.props.venuePath.hereNow.count}</p>
+          <button
+          className = 'venue-favorite'> Favoritre this</button>
         </div>
       </div>
       )

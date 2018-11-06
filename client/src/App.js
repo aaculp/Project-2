@@ -49,14 +49,15 @@ class App extends Component {
             handleInputChange={this.handleInputChange}
             onFormSubmit={this.onFormSubmit}
             buttonInput={this.state.buttonInput}
-
           />
+          <Switch>
           <Route path ='/places' render = {() => <VenueListings
             venues={this.state.venues}
             buttonInput={this.state.buttonInput}
             venueId={this.state.venueId}
           />} />
           <Route path='/' component={Login} />
+          </Switch>
           <Footer />
         </div>
       </Router>
