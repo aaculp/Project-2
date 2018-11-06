@@ -4,10 +4,10 @@ const placesController = {};
 
 placesController.index = (req, res) => {
   Places.findAll()
-    .then(icecreams => {
+    .then(favs => {
       res.json({
         message: 'ok',
-        data: icecreams,
+        data: favs,
       });
     })
     .catch(err => {
@@ -18,10 +18,10 @@ placesController.index = (req, res) => {
 
 placesController.show = (req, res) => {
   Places.findById(req.params.id)
-    .then(icecream => {
+    .then(fav => {
       res.json({
         message: 'ok',
-        data: icecream,
+        data: fav,
       });
     })
     .catch(err => {
@@ -32,15 +32,15 @@ placesController.show = (req, res) => {
 
 placesController.create = (req, res) => {
   Places.create({
-    flavor: req.body.flavor,
-    description: req.body.description,
+    venue_name: req.body.venue_name,
+    venue_address: req.body.venue_address,
+    reviews: req.body.reviews,
     rating: req.body.rating,
-    url: req.body.url,
   })
-    .then(icecream => {
+    .then(fav => {
       res.json({
         message: 'ok',
-        data: icecream,
+        data: fav,
       });
     })
     .catch(err => {
@@ -52,17 +52,17 @@ placesController.create = (req, res) => {
 placesController.update = (req, res) => {
   Places.update(
     {
-      flavor: req.body.flavor,
-      description: req.body.description,
-      rating: req.body.rating,
-      url: req.body.url,
+    venue_name: req.body.venue_name,
+    venue_address: req.body.venue_address,
+    reviews: req.body.reviews,
+    rating: req.body.rating,
     },
     req.params.id,
   )
-    .then(icecream => {
+    .then(fav => {
       res.json({
         message: 'ok',
-        data: icecream,
+        data: fav,
       });
     })
     .catch(err => {
@@ -73,10 +73,10 @@ placesController.update = (req, res) => {
 
 placesController.destroy = (req, res) => {
   Places.destroy(req.params.id)
-    .then(icecream => {
+    .then(fav => {
       res.json({
         message: 'ok',
-        data: icecream,
+        data: fav,
       });
     })
     .catch(err => {
