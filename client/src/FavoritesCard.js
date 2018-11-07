@@ -11,17 +11,17 @@ render(){
     <section>
       <div>
         <div className = "image_container">
-          <img className="favorite_img" src="" alt="favorite image" />
+          <img className="favorite_img" src="" alt="favorite" />
         </div>
         <div className = "venue_info">
-          <h3>FAV NAME HERE</h3>
-          <p>FAV ADDRESS HERE</p>
+          <h3>{this.props.favorites.venue_name}</h3>
+          <p>{this.props.favorites.venue_address}</p>
         </div>
         <div className = "added_info">
           <h3>Your Review</h3>
-          <p>FAV REVIEW HERE</p>
+          <p>{this.props.favorites.reviews}</p>
           <h3>Your Rating</h3>
-          <p>FAV RATING HERE</p>
+          <p>{this.props.favorites.rating}</p>
         </div>
         <div className="edit_delete_buttons">
           <button>EDIT</button>
