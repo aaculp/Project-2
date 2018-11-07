@@ -6,19 +6,26 @@ import VenueListingEditBox from './VenueListingEditBox'
 
 class VenueListings extends Component {
   state = {
-    show: false
+    current: []
   }
 
-   handleClick(e) {
-    console.log(e.target)
-    this.setState(prevState => ({
-      show: !prevState.show
-    }))
+  handleChange(id){
+    let current = this.props.venues.filter( d => d.id === id)
+      this.setState(prevState => ({
+        current: current[0]
+      }))
+      console.log(`this is current`, current)
   }
-
 
   render() {
-  let allVenues = this.props.venues.map(venue => <VenueRow venuePath={venue} key={venue.id} />)
+  let allVenues = this.props.venues.map(d =>
+    <VenueRow
+    venueId2 = {this.props.venueId}
+    venuePath={d}
+    // key={d[0].id}
+    onClick = {(id) => this.handleChange(id)}
+    />)
+
   return(
     <div className="allvenues">
       <div className='venue-list'>
@@ -28,15 +35,21 @@ class VenueListings extends Component {
         <div className="venue-section">
           {allVenues}
         </div>
-        <VenueListingEditBox onClick = {(e) => this.handleClick(e)} />
+        <VenueListingEditBox current = {this.state.current} />
         <div className='venue-map'>
           <Mapbox />
         </div>
       </div>
     </div>
     )
+  }
 }
 
-}
+export default VenueListings;
 
-export default VenueListings
+   // onClick = {() => {
+   //          console.log(this.props.venuePath.id)
+   //          this.setState(prevState => ({
+   //            venueId2: this.props.venuePath.id
+   //          }))
+   //          }}

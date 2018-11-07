@@ -28,8 +28,10 @@ class App extends Component {
       console.log(data)
       this.setState({
         venues: data.response.venues,
-        venueId: data.response.venues.id
+        venueId: data.response.venues[0].id
       })
+      console.log(this.state.venues)
+      console.log(data.response.venues[0].id)
     })
   }
 
@@ -49,8 +51,9 @@ class App extends Component {
             buttonInput={this.state.buttonInput}
           />
           <Switch>
-           <Route path='/favorites' component={Favorites} />
-          <Route path ='/places' render = {() => <VenueListings
+          <Route path='/favorites' component={Favorites} />
+          <Route path ='/places'
+            render = {() => <VenueListings
             venues={this.state.venues}
             buttonInput={this.state.buttonInput}
             venueId={this.state.venueId}
