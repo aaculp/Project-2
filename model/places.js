@@ -53,4 +53,20 @@ Places.destroy = id => {
   );
 };
 
+Places.findAllUsers = () => {
+  return db.query(`SELECT * FROM users`);
+};
+
+Places.loginCreate = users => {
+  return db.one(
+    `
+    INSERT INTO users
+    (username, password)
+    VALUES ($1, $2)
+    RETURNING *
+  `,
+    [users.username, users.password]
+  );
+};
+
 module.exports = Places;
