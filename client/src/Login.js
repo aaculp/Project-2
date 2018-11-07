@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom'
-import LoginBox from './LoginBox'
-import RegisterBox from './RegisterBox'
 import axios from 'axios'
 
 class Login extends Component {
@@ -12,13 +10,21 @@ class Login extends Component {
       password: '',
       newId: '',
       fireRedirect: false,
-      toggleShow: false
+      toggleLogin: false,
+      toggleRegister: false,
     }
   }
 
   toggleLogin() {
     this.setState(prevState => ({
-      toggleShow: !prevState.toggelShow
+      toggleLogin: !prevState.toggleLogin
+    }))
+    console.log(this.state.toggleLogin)
+  }
+
+  toggleRegister() {
+    this.setState(prevState => ({
+      toggleRegister: !prevState.toggleRegister
     }))
   }
 
@@ -48,10 +54,9 @@ class Login extends Component {
     return(
     <div className = "loginPage-Container">
         <div className ='box-controller'>
-        <LoginBox onClick={this.toggleLogin}/>
-        <RegisterBox />
+        <button onClick={() => this.toggleLogin()}>Log In</button>
+        {this.state.toggleLogin &&
         <div>
-        {this.state.toggleShow&&
         <form>
         <input
         type="text"
@@ -69,8 +74,30 @@ class Login extends Component {
         type="submit"
         onClick={(e) => this.handleSubmit(e)}>Lets Go!</button>
         </form>
-      }
       </div>
+    }
+        <button onClick={() => this.toggleRegister()}>Register</button>
+        {this.state.toggleRegister &&
+        <div>
+        <form>
+        <input
+        type="text"
+        name="username"
+        value={this.state.username}
+        placeholder="Username"
+        onChange={(e) => this.handleInputChange(e)} />
+        <input
+        type="text"
+        name="password"
+        value={this.state.password}
+        placeholder="Password"
+        onChange={(e) => this.handleInputChange(e)} />
+        <button
+        type="submit"
+        onClick={(e) => this.handleSubmit(e)}>Lets Go!</button>
+        </form>
+      </div>
+    }
         {this.state.fireRedirect
           ? <Redirect push to={`/places/${this.state.newId}`} />
           : ''}
