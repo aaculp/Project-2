@@ -22,7 +22,7 @@ class VenueListings extends Component {
     <VenueRow
     venueId2 = {this.props.venueId}
     venuePath={d}
-    // key={d[0].id}
+    key={d.id}
     onClick = {(id) => this.handleChange(id)}
     />)
 
