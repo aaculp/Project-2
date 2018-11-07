@@ -1,29 +1,46 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom'
 import LoginBox from './LoginBox'
 import RegisterBox from './RegisterBox'
+import axios from 'axios'
 
 class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoginOpen: true,
-      isRegisterOpen: false
+      username: '',
+      password: '',
+      newId: '',
+      fireRedirect: false,
+      toggleShow: false
     }
   }
 
-  showLoginBox(e) {
-    console.log(e.target.value)
-    this.setState({
-      isLoginOpen:true,
-      isRegisterOpen:false
-    });
+  toggleLogin() {
+    this.setState(prevState => ({
+      toggleShow: !prevState.toggelShow
+    }))
   }
 
-  showRegisterBox() {
+  handleInputChange(e) {
+    const name = e.target.name
+    const value = e.target.value
+    this.setState(prevState => ({
+      [name]: value
+    }))
+  }
+
+    handleSubmit(e) {
+    e.preventDefault()
+    axios.post('./login/login', {
+      username: this.state.username,
+      password: this.state.password
+    }).then(res => {
       this.setState({
-        isRegisterOpen:true,
-        isLoginOpen:false
-      });
+        newId: res.data.data.id,
+        fireRedirect: true
+      })
+    })
   }
 
 
@@ -31,15 +48,32 @@ class Login extends Component {
     return(
     <div className = "loginPage-Container">
         <div className ='box-controller'>
-        <LoginBox />
+        <LoginBox onClick={this.toggleLogin}/>
         <RegisterBox />
+        <div>
+        {this.state.toggleShow&&
         <form>
         <input
-        placeholder="Username" />
+        type="text"
+        name="username"
+        value={this.state.username}
+        placeholder="Username"
+        onChange={(e) => this.handleInputChange(e)} />
         <input
-        placeholder="Password" />
-        <button type="button">Lets Go!</button>
+        type="text"
+        name="password"
+        value={this.state.password}
+        placeholder="Password"
+        onChange={(e) => this.handleInputChange(e)} />
+        <button
+        type="submit"
+        onClick={(e) => this.handleSubmit(e)}>Lets Go!</button>
         </form>
+      }
+      </div>
+        {this.state.fireRedirect
+          ? <Redirect push to={`/places/${this.state.newId}`} />
+          : ''}
         </div>
     </div>
       )

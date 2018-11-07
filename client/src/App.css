@@ -17,14 +17,18 @@ body {
   -ms-flex-align: center;
   align-items: center;
   color: red;
-  background-color: purple; }
+  background-color: purple;
+}
+
   .header h1 {
     margin-left: 50px;
     padding: 25px;
     border-radius: 50%;
     background-color: red;
     color: white;
-    text-align: center; }
+    text-align: center;
+  }
+
   .header .input {
     display: -webkit-box;
     display: -ms-flexbox;
