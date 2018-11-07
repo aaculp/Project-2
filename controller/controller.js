@@ -1,5 +1,4 @@
 const Places = require('../model/places');
-
 const placesController = {};
 
 placesController.index = (req, res) => {
@@ -84,5 +83,38 @@ placesController.destroy = (req, res) => {
       res.status(500).json({ err });
     });
 };
+
+placesController.loginIndex = (req, res) => {
+  Places.findAllUsers()
+    .then(users => {
+      res.json({
+        message: 'ok',
+        data: users,
+      });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({ err });
+    });
+};
+
+placesController.loginCreate = (req, res) => {
+  console.log('req.body', req.body)
+  Places.loginCreate({
+    username: req.body.username,
+    password: req.body.password,
+  })
+    .then(users => {
+      res.json({
+        message: 'ok',
+        data: users,
+      });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({ err });
+    });
+};
+
 
 module.exports = placesController;
