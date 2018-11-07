@@ -7,7 +7,7 @@ state = {
   fav: []
 }
   componentDidMount() {
-    axios.get('/places')
+    axios.get('/favorites')
     .then(res=> {
       this.setState(preState => ({
         fav: res.data.data

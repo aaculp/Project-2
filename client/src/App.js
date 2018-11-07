@@ -52,10 +52,7 @@ class App extends Component {
           />
           <Switch>
           <Route path='/favorites' component={Favorites} />
-
           <Route path ='/places' render = {() => <VenueListings
-
-
             venues={this.state.venues}
             buttonInput={this.state.buttonInput}
             venueId={this.state.venueId}
