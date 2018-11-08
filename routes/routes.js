@@ -3,8 +3,8 @@ const placesRouter = express.Router();
 
 const placesController = require('../controller/controller');
 
-placesRouter.get('/login', placesController.loginIndex)
-placesRouter.post('/login', placesController.loginCreate);
+// placesRouter.get('/login', placesController.loginIndex)
+// placesRouter.post('/login', placesController.loginCreate);
 
 
 placesRouter.get('/:id', placesController.show);
