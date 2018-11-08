@@ -1,5 +1,6 @@
 import React from 'react';
 function VenueRow(props){
+
   function favoriteVenue(id){
     props.onClick(id)
     console.log(`this is id`, id)

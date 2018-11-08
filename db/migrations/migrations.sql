@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS fav (
   venue_name VARCHAR(255),
   venue_address VARCHAR(255),
   reviews VARCHAR(1000),
-  rating INT NOT NULL
+  rating INT
 );
 
 CREATE TABLE IF NOT EXISTS venues (

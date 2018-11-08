@@ -38,7 +38,7 @@ class Login extends Component {
 
     handleSubmit(e) {
     e.preventDefault()
-    axios.post('./login/login', {
+    axios.post('/login/login', {
       username: this.state.username,
       password: this.state.password
     }).then(res => {
@@ -65,7 +65,7 @@ class Login extends Component {
         placeholder="Username"
         onChange={(e) => this.handleInputChange(e)} />
         <input
-        type="text"
+        type="password"
         name="password"
         value={this.state.password}
         placeholder="Password"
@@ -74,6 +74,7 @@ class Login extends Component {
         type="submit"
         onClick={(e) => this.handleSubmit(e)}>Lets Go!</button>
         </form>
+      {this.state.fireRedirect ? <Redirect push to={`/places/${this.state.newId}`} /> : ''}
       </div>
     }
         <button onClick={() => this.toggleRegister()}>Register</button>
@@ -87,7 +88,7 @@ class Login extends Component {
         placeholder="Username"
         onChange={(e) => this.handleInputChange(e)} />
         <input
-        type="text"
+        type="password"
         name="password"
         value={this.state.password}
         placeholder="Password"
@@ -98,9 +99,7 @@ class Login extends Component {
         </form>
       </div>
     }
-        {this.state.fireRedirect
-          ? <Redirect push to={`/places/${this.state.newId}`} />
-          : ''}
+        {this.state.fireRedirect ? <Redirect push to={`/places/${this.state.newId}`} /> : ''}
         </div>
     </div>
       )
@@ -109,8 +108,3 @@ class Login extends Component {
 
 
 export default Login;
-
-        // <div className ="box-container">
-        //   {this.state.isLoginOpen && <LoginBox />}
-        // </div>
-
