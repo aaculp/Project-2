@@ -32,14 +32,12 @@ Places.update = (fav, id) => {
   return db.one(
     `
     UPDATE fav SET
-      venue_name = $1,
-      venue_address = $2,
-      reviews = $3,
-      rating = $4
-    WHERE id = $5
+      reviews = $1,
+      rating = $2
+    WHERE id = $3
     RETURNING *
   `,
-    [fav.venue_name, fav.venue_address, fav.reviews, fav.rating, id]
+    [fav.reviews, fav.rating, id]
   );
 };
 
@@ -53,20 +51,20 @@ Places.destroy = id => {
   );
 };
 
-Places.findAllUsers = () => {
-  return db.query(`SELECT * FROM users`);
-};
+// Places.findAllUsers = () => {
+//   return db.query(`SELECT * FROM users`);
+// };
 
-Places.loginCreate = users => {
-  return db.one(
-    `
-    INSERT INTO users
-    (username, password)
-    VALUES ($1, $2)
-    RETURNING *
-  `,
-    [users.username, users.password]
-  );
-};
+// Places.loginCreate = users => {
+//   return db.one(
+//     `
+//     INSERT INTO users
+//     (username, password)
+//     VALUES ($1, $2)
+//     RETURNING *
+//   `,
+//     [users.username, users.password]
+//   );
+// };
 
 module.exports = Places;
