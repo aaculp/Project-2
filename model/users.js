@@ -9,19 +9,19 @@ User.findByUserName = userName => {
   `, [userName]);
 };
 
-User.create = user => {
+User.create = users => {
   return db.one(`
     INSERT INTO users
-    (username, email, password_digest, firstname, lastname)
-    VALUES ($1, $2, $3, $4, $5)
+    (username, email, password_digest, firstname, lastname, password)
+    VALUES ($1, $2, $3, $4, $5, $6)
     RETURNING *
-  `, [user.username, user.email, user.password_digest, user.firstname, user.lastname]);
+  `, [users.username, users.email, users.password_digest, users.firstname, users.lastname, users.password]);
 };
 
 User.findUserFav = id => {
   return db.manyOrNone(`
     SELECT * FROM users
-    WHERE user_id = $1
+    WHERE users_id = $1
     `, [id])
 };
 

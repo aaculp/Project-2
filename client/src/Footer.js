@@ -4,7 +4,7 @@ class Footer extends Component {
   render() {
     return(
       <div className="footer">
-      <h1> AAC </h1>
+      <h1> JAS </h1>
       </div>
       )
   }

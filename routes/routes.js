@@ -1,5 +1,6 @@
 const express = require('express');
 const placesRouter = express.Router();
+const authHelpers = require('../services/auth/auth-helpers');
 
 const placesController = require('../controller/controller');
 

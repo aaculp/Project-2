@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "concurrently": "^4.0.1",
+    "cors": "^2.8.5",
     "nodemon": "^1.18.6"
   }
 }

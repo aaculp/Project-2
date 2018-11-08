@@ -8,6 +8,9 @@ class Login extends Component {
     this.state = {
       username: '',
       password: '',
+      email: '',
+      firstname: '',
+      lastname: '',
       newId: '',
       fireRedirect: false,
       toggleLogin: false,
@@ -28,26 +31,29 @@ class Login extends Component {
     }))
   }
 
-  // handleInputChange(e) {
-  //   const name = e.target.name
-  //   const value = e.target.value
-  //   this.setState(prevState => ({
-  //     [name]: value
-  //   }))
-  // }
+  handleInputChange(e) {
+    const name = e.target.name
+    const value = e.target.value
+    this.setState(prevState => ({
+      [name]: value
+    }))
+  }
 
-  //   handleSubmit(e) {
-  //   e.preventDefault()
-  //   axios.post('./login/login', {
-  //     username: this.state.username,
-  //     password: this.state.password
-  //   }).then(res => {
-  //     this.setState({
-  //       newId: res.data.data.id,
-  //       fireRedirect: true
-  //     })
-  //   })
-  // }
+  async handleSubmit(e) {
+    e.preventDefault()
+    axios.post('http://localhost:3001/auth/register', {
+      username: this.state.username,
+      password: this.state.password,
+      firstname: this.state.firstname,
+      lastname: this.state.lastname,
+      email: this.state.email
+    }).then(res => {
+      this.setState({
+        newId: res.data.data.id,
+        fireRedirect: true
+      })
+    })
+  }
 
 
   render(){
@@ -89,7 +95,7 @@ class Login extends Component {
         <button onClick={() => this.toggleRegister()}>Register</button>
         {this.state.toggleRegister &&
         <div>
-        <form
+        {/*<form
           method = 'POST'
           action = '/auth/register'
         >
@@ -132,7 +138,50 @@ class Login extends Component {
          value = 'Register!'
         // onClick={(e) => this.handleSubmit(e)}>Lets Go!
         />
-        </form>
+        </form> */}
+        <input
+          type='text'
+          name='username'
+          value={this.state.username}
+          placeholder="Username"
+          required
+          onChange={(e) => this.handleInputChange(e)}
+        />
+        <input
+          name='email'
+          type='email'
+          placeholder='email'
+          value={ this.state.email }
+          onChange={(e) => this.handleInputChange(e)}
+          required
+        />
+        <input
+          type='text'
+          name= 'password'
+          value={this.state.password}
+          placeholder='Password'
+          required
+          onChange={(e) => this.handleInputChange(e)}
+        />
+        <input
+          name='firstname'
+          type='text'
+          placeholder='first name'
+          onChange={(e) => this.handleInputChange(e)}
+          required
+        />
+        <input
+          name='lastname'
+          type='text'
+          placeholder='last name'
+          onChange={(e) => this.handleInputChange(e)}
+          required
+        />
+        <button
+          onClick={(e) => this.handleSubmit(e)}
+        >
+        REGISTER
+        </button>
       </div>
     }
         {this.state.fireRedirect

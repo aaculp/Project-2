@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS users (
   password_digest TEXT NOT NULL,
   firstname VARCHAR(255),
   lastname VARCHAR(255),
-  password VARCHAR(255) NOT NULL
+  password VARCHAR(255)
 );
 
 CREATE TABLE IF NOT EXISTS fav (

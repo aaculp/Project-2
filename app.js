@@ -5,26 +5,24 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
-
-const placesRoutes = require('./routes/routes');
-const loginRoutes = require('./routes/routes');
-
-const authRoutes = require('./routes/auth-routes');
-app.use('/auth', authRoutes);
-const userRoutes = require('./routes/user-routes');
-app.use('/user', userRoutes);
-
+const cors = require('cors');
 const app = express();
 require('dotenv').config();
 
+const placesRoutes = require('./routes/routes');
+const loginRoutes = require('./routes/routes');
+const authRoutes = require('./routes/auth-routes');
+const userRoutes = require('./routes/user-routes');
+
 const port = process.env.port || 3001;
+
 
 app.use(logger('dev'));
 app.use(express.static(path.join(__dirname, 'client/build')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-
 app.use(cookieParser());
+app.use(cors())
 app.use(session({
   secret: process.env.SECRET_KEY,
   resave: false,
@@ -33,6 +31,10 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+
+
+app.use('/auth', authRoutes);
+app.use('/user', userRoutes);
 app.use('/favorites', placesRoutes);
 app.use('/login', loginRoutes);
 

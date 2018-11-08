@@ -1,9 +1,9 @@
 \c places
 
 
-INSERT INTO users VALUES (DEFAULT,'aaronculp', 'generalassembly');
-INSERT INTO users VALUES (DEFAULT,'jonathangarces', 'generalassembly');
-INSERT INTO users VALUES (DEFAULT,'samischonefeld', 'generalassembly');
+INSERT INTO users VALUES (DEFAULT,'aaronculp', 'generalassembly@gmail.com');
+INSERT INTO users VALUES (DEFAULT,'jonathangarces', 'generalassembly@gmail.com');
+INSERT INTO users VALUES (DEFAULT,'samischonefeld', 'generalassembly@gmail.com');
 
 INSERT INTO fav VALUES (DEFAULT, 2, 'The Watering Hole', '106 E 19th St, New York, NY 10003', 'LOVE THIS PLACE', 5);
 INSERT INTO fav VALUES (DEFAULT, 1, 'General Assembly', '10 E 21st St, New York, NY 10010', 'Great place to learn', 3);
