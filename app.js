@@ -9,6 +9,11 @@ const passport = require('passport');
 const placesRoutes = require('./routes/routes');
 const loginRoutes = require('./routes/routes');
 
+const authRoutes = require('./routes/auth-routes');
+app.use('/auth', authRoutes);
+const userRoutes = require('./routes/user-routes');
+app.use('/user', userRoutes);
+
 const app = express();
 require('dotenv').config();
 

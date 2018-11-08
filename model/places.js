@@ -16,15 +16,15 @@ Places.findById = id => {
   );
 };
 
-Places.create = fav => {
+Places.create = (fav, userid) => {
   return db.one(
     `
     INSERT INTO fav
-    (venue_name, venue_address, reviews, rating)
+    (venue_name, venue_address, reviews, rating, users_id)
     VALUES ($1, $2, $3, $4)
     RETURNING *
   `,
-    [fav.venue_name, fav.venue_address, fav.reviews, fav.rating]
+    [fav.venue_name, fav.venue_address, fav.reviews, fav.rating, users_id]
   );
 };
 

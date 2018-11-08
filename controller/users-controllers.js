@@ -23,4 +23,18 @@ usersController.create = (req, res) => {
   });
 }
 
+usersController.index = (req, res) => {
+  User.findUserFav(req.user.id)
+  .then(fav => {
+    res.json({
+      user: req.user,
+      data: 'User prof on this route'
+      fav: favs,
+    });
+  }).catch(err => {
+    console.log(err);
+    res.status(500).json({err:err})
+  })
+}
+
 module.exports = usersController;

@@ -5,12 +5,12 @@ const placesController = require('../controller/controller');
 
 // placesRouter.get('/login', placesController.loginIndex)
 // placesRouter.post('/login', placesController.loginCreate);
-
-
-placesRouter.get('/:id', placesController.show);
-placesRouter.put('/:id', placesController.update);
-placesRouter.delete('/:id', placesController.destroy);
 placesRouter.get('/', placesController.index);
-placesRouter.post('/', placesController.create);
+placesRouter.post('/', authHelpers.loginRequired, placesController.create);
+
+placesRouter.get('/:id', authHelpers.loginRequired, placesController.show);
+placesRouter.put('/:id', authHelpers.loginRequired, placesController.update);
+placesRouter.delete('/:id', authHelpers.loginRequired, placesController.destroy);
+
 
 module.exports = placesRouter;
