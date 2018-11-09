@@ -48,23 +48,29 @@ class Login extends Component {
       email: this.state.email
     }).then(res => {
       this.setState({
-        newId: res.data.data.id,
+        newId: res.data.user.id,
         fireRedirect: true
       })
     })
   }
 
 handleLogin(e) {
+
   console.log('hitting')
   e.preventDefault()
-  axios.get('/auth/login', {
+  axios.post('/auth/login', {
     username: this.state.username,
     password: this.state.password
   }).then(res => {
-    this.setState({
-    newId: res.data.data.id,
-    fireRedirect: true
-  })
+    console.log('this is rew in axios.post: ', res)
+    if(res.data) {
+      console.log('this is res.data.data.id', res.data.user.id)
+      this.setState({
+      newId: res.data.user.id,
+      fireRedirect: true
+    })
+    }
+
 })
 
 }

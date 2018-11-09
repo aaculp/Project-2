@@ -15,7 +15,7 @@ usersController.create = (req, res) => {
     lastname: req.body.lastname,
   }).then(users => {
   req.login(users, (err) => {
-      if (err) return next(err);
+      if (err) return next();
       res.redirect('/user');
     });
   }).catch(err => {

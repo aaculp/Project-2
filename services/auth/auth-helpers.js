@@ -6,8 +6,14 @@ function comparePass(userPassword, databasePassword) {
 }
 
 function loginRedirect(req, res, next) {
-  if (req.user) return res.redirect('/user');
-  return next();
+    console.log('this is req.body:', req.body)
+  User.findByUserName(req.body.username)
+    .then( user => {
+      console.log('this is user: ', user)
+      res.locals.user = user
+       if (user) return next();
+    })
+
 }
 
 function loginRequired(req, res, next) {

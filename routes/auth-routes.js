@@ -4,16 +4,14 @@ const passport = require('../services/auth/local');
 const authHelpers = require('../services/auth/auth-helpers');
 const usersController = require('../controller/users-controllers');
 
-authRouter.get('/', authHelpers.loginRedirect, (req, res) => {
-  res.render('auth/login', {
-    currentPage: 'login',
-  });
+authRouter.post('/login', authHelpers.loginRedirect, (req, res) => {
+ console.log('this is inside post..res.locals', res.locals)
+  res.json(res.locals)
 });
 
-authRouter.get('/register', authHelpers.loginRedirect, (req, res) => {
-  res.render('auth/register', {
-    currentPage: 'register',
-  });
+authRouter.get('/login', authHelpers.loginRedirect, (req, res) => {
+  console.log('this is inside get..res.locals', res.locals)
+  res.json(res.locals)
 });
 
 authRouter.post('/register', usersController.create);
