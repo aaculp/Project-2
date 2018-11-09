@@ -93,7 +93,7 @@ handleLogin(e) {
           onChange={(e) => this.handleInputChange(e)}
           />
         <input
-          type='text'
+          type='password'
           name='password'
           value={this.state.password}
           placeholder='Password'
@@ -128,7 +128,7 @@ handleLogin(e) {
           required
         />
         <input
-          type='text'
+          type='password'
           name= 'password'
           value={this.state.password}
           placeholder='Password'

@@ -9,7 +9,6 @@ function VenueRow(props){
 
     return(
       <div className="venue-container">
-        <img src = "" alt = "venue_img" />
         <div className="venue-container-footer">
           <p> Name:{props.venuePath.name}</p>
           <p className='venue-address'>Address: {props.venuePath.location.address}</p>
