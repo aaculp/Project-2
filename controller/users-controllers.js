@@ -3,7 +3,7 @@ const User = require('../model/users.js');
 
 const usersController = {};
 
-usersController.create = (req, res) => {
+usersController.create = (req, res, next) => {
   console.log('REQBODYYYYYYY', req.body)
   const salt = bcrypt.genSaltSync();
   const hash = bcrypt.hashSync(req.body.password, salt);
@@ -13,11 +13,10 @@ usersController.create = (req, res) => {
     password_digest: hash,
     firstname: req.body.firstname,
     lastname: req.body.lastname,
-  }).then(users => {
-  req.login(users, (err) => {
-      if (err) return next();
-      res.redirect('/user');
-    });
+  }).then(user => {
+    console.log('this is users: ', user)
+      if (!user) res.json({"msg":"error"})
+      else{ res.json({"user":user}) }
   }).catch(err => {
     console.log(err);
     res.status(500).json({error: err});

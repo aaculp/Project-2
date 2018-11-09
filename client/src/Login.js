@@ -47,6 +47,8 @@ class Login extends Component {
       lastname: this.state.lastname,
       email: this.state.email
     }).then(res => {
+
+      console.log('this is res.data.user: ', res)
       this.setState({
         newId: res.data.user.id,
         fireRedirect: true
