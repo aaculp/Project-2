@@ -12,7 +12,7 @@ authRouter.get('/', authHelpers.loginRedirect, (req, res) => {
 
 authRouter.get('/register', authHelpers.loginRedirect, (req, res) => {
   res.render('auth/register', {
-    currentPage: 'login',
+    currentPage: 'register',
   });
 });
 

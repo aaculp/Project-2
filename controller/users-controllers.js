@@ -15,16 +15,13 @@ usersController.create = (req, res) => {
     lastname: req.body.lastname,
   }).then(users => {
   req.login(users, (err) => {
-      if (users) ;
-      res.redirect('/')
-      if (err) return (err);
+      if (err) return next(err);
       res.redirect('/user');
     });
   }).catch(err => {
     console.log(err);
     res.status(500).json({error: err});
-  }); if (same) ;
-    res.redirect('/')
+  });
 }
 
 usersController.index = (req, res) => {
