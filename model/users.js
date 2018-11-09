@@ -21,7 +21,7 @@ User.create = users => {
 User.findUserFav = id => {
   return db.manyOrNone(`
     SELECT * FROM users
-    WHERE users_id = $1
+    WHERE id = $1
     `, [id])
 };
 

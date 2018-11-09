@@ -25,7 +25,6 @@ class VenueListings extends Component {
     key={d.id}
     onClick = {(id) => this.handleChange(id)}
     />)
-  console.log(this.props.location.pathname)
   return(
     <div className="allvenues">
       <div className='venue-list'>

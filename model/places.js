@@ -22,11 +22,11 @@ Places.create = (fav, userid) => {
   return db.one(
     `
     INSERT INTO fav
-    (venue_name, venue_address, reviews, rating, users_id)
-    VALUES ($1, $2, $3, $4)
+    (users_id, venue_name, venue_address, reviews, rating)
+    VALUES ($1, $2, $3, $4, $5)
     RETURNING *
   `,
-    [fav.venue_name, fav.venue_address, fav.reviews, fav.rating, users_id]
+    [fav.users_id, fav.venue_name, fav.venue_address, fav.reviews, fav.rating]
   );
 };
 

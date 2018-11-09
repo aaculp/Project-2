@@ -57,8 +57,6 @@ class Login extends Component {
   }
 
 handleLogin(e) {
-
-  console.log('hitting')
   e.preventDefault()
   axios.post('/auth/login', {
     username: this.state.username,
@@ -71,7 +69,7 @@ handleLogin(e) {
       newId: res.data.user.id,
       fireRedirect: true
     })
-    }
+}
 
 })
 
