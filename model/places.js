@@ -18,15 +18,15 @@ Places.findById = id => {
   );
 };
 
-Places.create = fav => {
+Places.create = (fav, userid) => {
   return db.one(
     `
     INSERT INTO fav
-    (users_id, venue_name, venue_address, reviews, rating)
-    VALUES ($1, $2, $3, $4, $5)
+    (venue_name, venue_address, reviews, rating, users_id)
+    VALUES ($1, $2, $3, $4)
     RETURNING *
   `,
-    [fav.users_id, fav.venue_name, fav.venue_address, fav.reviews, fav.rating]
+    [fav.venue_name, fav.venue_address, fav.reviews, fav.rating, users_id]
   );
 };
 
@@ -53,20 +53,20 @@ Places.destroy = id => {
   );
 };
 
-Places.findAllUsers = () => {
-  return db.query(`SELECT * FROM users`);
-};
+// Places.findAllUsers = () => {
+//   return db.query(`SELECT * FROM users`);
+// };
 
-Places.loginCreate = users => {
-  return db.one(
-    `
-    INSERT INTO users
-    (username, password)
-    VALUES ($1, $2)
-    RETURNING *
-  `,
-    [users.username, users.password]
-  );
-};
+// Places.loginCreate = users => {
+//   return db.one(
+//     `
+//     INSERT INTO users
+//     (username, password)
+//     VALUES ($1, $2)
+//     RETURNING *
+//   `,
+//     [users.username, users.password]
+//   );
+// };
 
 module.exports = Places;

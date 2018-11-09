@@ -3,9 +3,13 @@ CREATE DATABASE places;
 \c places
 
 CREATE TABLE IF NOT EXISTS users (
-  id BIGSERIAL PRIMARY KEY,
+  id SERIAL PRIMARY KEY,
   username VARCHAR(255) NOT NULL UNIQUE,
-  password VARCHAR(255) NOT NULL
+  email VARCHAR(255) UNIQUE NOT NULL,
+  password_digest TEXT NOT NULL,
+  firstname VARCHAR(255),
+  lastname VARCHAR(255),
+  password VARCHAR(255)
 );
 
 CREATE TABLE IF NOT EXISTS fav (

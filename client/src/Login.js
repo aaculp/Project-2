@@ -8,6 +8,9 @@ class Login extends Component {
     this.state = {
       username: '',
       password: '',
+      email: '',
+      firstname: '',
+      lastname: '',
       newId: '',
       fireRedirect: false,
       toggleLogin: false,
@@ -19,7 +22,6 @@ class Login extends Component {
     this.setState(prevState => ({
       toggleLogin: !prevState.toggleLogin
     }))
-    console.log(this.state.toggleLogin)
   }
 
   toggleRegister() {
@@ -36,19 +38,44 @@ class Login extends Component {
     }))
   }
 
-    handleSubmit(e) {
+  async handleSubmit(e) {
     e.preventDefault()
-    axios.post('/login/login', {
+    axios.post('/auth/register', {
       username: this.state.username,
-      password: this.state.password
+      password: this.state.password,
+      firstname: this.state.firstname,
+      lastname: this.state.lastname,
+      email: this.state.email
     }).then(res => {
+
+      console.log('this is res.data.user: ', res)
       this.setState({
-        newId: res.data.data.id,
+        newId: res.data.user.id,
         fireRedirect: true
       })
     })
   }
 
+handleLogin(e) {
+
+  console.log('hitting')
+  e.preventDefault()
+  axios.post('/auth/login', {
+    username: this.state.username,
+    password: this.state.password
+  }).then(res => {
+    console.log('this is rew in axios.post: ', res)
+    if(res.data) {
+      console.log('this is res.data.data.id', res.data.user.id)
+      this.setState({
+      newId: res.data.user.id,
+      fireRedirect: true
+    })
+    }
+
+})
+
+}
 
   render(){
     return(
@@ -57,46 +84,76 @@ class Login extends Component {
         <button onClick={() => this.toggleLogin()}>Log In</button>
         {this.state.toggleLogin &&
         <div>
-        <form>
         <input
-        type="text"
-        name="username"
-        value={this.state.username}
-        placeholder="Username"
-        onChange={(e) => this.handleInputChange(e)} />
+          type='text'
+          name='username'
+          value={this.state.username}
+          placeholder='Username'
+          required
+          onChange={(e) => this.handleInputChange(e)}
+          />
         <input
-        type="password"
-        name="password"
-        value={this.state.password}
-        placeholder="Password"
-        onChange={(e) => this.handleInputChange(e)} />
+          type='text'
+          name='password'
+          value={this.state.password}
+          placeholder='Password'
+          required
+          onChange={(e) => this.handleInputChange(e)}
+          />
         <button
-        type="submit"
-        onClick={(e) => this.handleSubmit(e)}>Lets Go!</button>
-        </form>
-      {this.state.fireRedirect ? <Redirect push to={`/places/${this.state.newId}`} /> : ''}
+          onClick={(e) => this.handleLogin(e)}>
+          Login
+          </button>
       </div>
     }
+
         <button onClick={() => this.toggleRegister()}>Register</button>
         {this.state.toggleRegister &&
+
         <div>
-        <form>
         <input
-        type="text"
-        name="username"
-        value={this.state.username}
-        placeholder="Username"
-        onChange={(e) => this.handleInputChange(e)} />
+          type='text'
+          name='username'
+          value={this.state.username}
+          placeholder="Username"
+          required
+          onChange={(e) => this.handleInputChange(e)}
+        />
         <input
-        type="password"
-        name="password"
-        value={this.state.password}
-        placeholder="Password"
-        onChange={(e) => this.handleInputChange(e)} />
+          name='email'
+          type='email'
+          placeholder='email'
+          value={ this.state.email }
+          onChange={(e) => this.handleInputChange(e)}
+          required
+        />
+        <input
+          type='text'
+          name= 'password'
+          value={this.state.password}
+          placeholder='Password'
+          required
+          onChange={(e) => this.handleInputChange(e)}
+        />
+        <input
+          name='firstname'
+          type='text'
+          placeholder='first name'
+          onChange={(e) => this.handleInputChange(e)}
+          required
+        />
+        <input
+          name='lastname'
+          type='text'
+          placeholder='last name'
+          onChange={(e) => this.handleInputChange(e)}
+          required
+        />
         <button
-        type="submit"
-        onClick={(e) => this.handleSubmit(e)}>Lets Go!</button>
-        </form>
+          onClick={(e) => this.handleSubmit(e)}
+        >
+        REGISTER
+        </button>
       </div>
     }
         {this.state.fireRedirect ? <Redirect push to={`/places/${this.state.newId}`} /> : ''}

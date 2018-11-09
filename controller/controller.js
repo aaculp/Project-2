@@ -36,7 +36,7 @@ placesController.create = (req, res) => {
     venue_address: req.body.venue_address,
     reviews: req.body.reviews,
     rating: req.body.rating,
-  })
+  }, req.user.id)
     .then(fav => {
       res.json({
         message: 'ok',
