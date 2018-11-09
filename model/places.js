@@ -7,10 +7,12 @@ Places.findAll = () => {
 };
 
 Places.findById = id => {
-  return db.oneOrNone(
+  return db.query(
     `
-    SELECT * FROM fav
-    WHERE id = $1
+    SELECT fav.*
+    FROM fav
+    JOIN users ON users.id = fav.users_id
+    WHERE users.id = $1
   `,
     [id]
   );
@@ -20,11 +22,11 @@ Places.create = fav => {
   return db.one(
     `
     INSERT INTO fav
-    (venue_name, venue_address, reviews, rating)
-    VALUES ($1, $2, $3, $4)
+    (users_id, venue_name, venue_address, reviews, rating)
+    VALUES ($1, $2, $3, $4, $5)
     RETURNING *
   `,
-    [fav.venue_name, fav.venue_address, fav.reviews, fav.rating]
+    [fav.users_id, fav.venue_name, fav.venue_address, fav.reviews, fav.rating]
   );
 };
 
@@ -32,14 +34,12 @@ Places.update = (fav, id) => {
   return db.one(
     `
     UPDATE fav SET
-      venue_name = $1,
-      venue_address = $2,
-      reviews = $3,
-      rating = $4
-    WHERE id = $5
+      reviews = $1,
+      rating = $2
+    WHERE id = $3
     RETURNING *
   `,
-    [fav.venue_name, fav.venue_address, fav.reviews, fav.rating, id]
+    [fav.reviews, fav.rating, id]
   );
 };
 

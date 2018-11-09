@@ -31,6 +31,7 @@ placesController.show = (req, res) => {
 
 placesController.create = (req, res) => {
   Places.create({
+    users_id: req.body.users_id,
     venue_name: req.body.venue_name,
     venue_address: req.body.venue_address,
     reviews: req.body.reviews,
@@ -51,12 +52,10 @@ placesController.create = (req, res) => {
 placesController.update = (req, res) => {
   Places.update(
     {
-    venue_name: req.body.venue_name,
-    venue_address: req.body.venue_address,
     reviews: req.body.reviews,
     rating: req.body.rating,
     },
-    req.params.id,
+    req.body.id,
   )
     .then(fav => {
       res.json({
@@ -99,7 +98,6 @@ placesController.loginIndex = (req, res) => {
 };
 
 placesController.loginCreate = (req, res) => {
-  console.log('req.body', req.body)
   Places.loginCreate({
     username: req.body.username,
     password: req.body.password,

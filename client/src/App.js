@@ -51,13 +51,14 @@ class App extends Component {
             buttonInput={this.state.buttonInput}
           />
           <Switch>
-          <Route path='/favorites' component={Favorites} />
-          <Route path ='/places' render = {() => <VenueListings
+          <Route path='/places/:id/favorites' render={(props) => (<Favorites {...props} />)} />
+          <Route path ='/places/:id' render = {(props) => (<VenueListings {...props}
             venues={this.state.venues}
             buttonInput={this.state.buttonInput}
             venueId={this.state.venueId}
-          />} />
-          <Route path='/' component={Login} />
+          />)} />
+          <Route path='/register' component={Login} />
+          <Route path='/' render={(props) => (<Login {...props}/>)} />
           </Switch>
           <Footer />
         </div>

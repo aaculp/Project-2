@@ -6,7 +6,7 @@ import VenueListingEditBox from './VenueListingEditBox'
 
 class VenueListings extends Component {
   state = {
-    current: []
+    current: [],
   }
 
   handleChange(id){
@@ -25,7 +25,7 @@ class VenueListings extends Component {
     key={d.id}
     onClick = {(id) => this.handleChange(id)}
     />)
-
+  console.log(this.props.location.pathname)
   return(
     <div className="allvenues">
       <div className='venue-list'>
@@ -35,7 +35,7 @@ class VenueListings extends Component {
         <div className="venue-section">
           {allVenues}
         </div>
-        <VenueListingEditBox current = {this.state.current} />
+        <VenueListingEditBox current = {this.state.current} { ...this.props }/>
         <div className='venue-map'>
           <Mapbox />
         </div>
@@ -46,10 +46,3 @@ class VenueListings extends Component {
 }
 
 export default VenueListings;
-
-   // onClick = {() => {
-   //          console.log(this.props.venuePath.id)
-   //          this.setState(prevState => ({
-   //            venueId2: this.props.venuePath.id
-   //          }))
-   //          }}

@@ -10,7 +10,7 @@ placesRouter.post('/login', placesController.loginCreate);
 placesRouter.get('/:id', placesController.show);
 placesRouter.put('/:id', placesController.update);
 placesRouter.delete('/:id', placesController.destroy);
-placesRouter.get('/', placesController.index);
 placesRouter.post('/', placesController.create);
+placesRouter.get('/', placesController.index);
 
 module.exports = placesRouter;
