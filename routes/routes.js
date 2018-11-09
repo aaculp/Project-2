@@ -13,5 +13,4 @@ placesRouter.get('/:id', authHelpers.loginRequired, placesController.show);
 placesRouter.put('/:id', authHelpers.loginRequired, placesController.update);
 placesRouter.delete('/:id', authHelpers.loginRequired, placesController.destroy);
 
-
 module.exports = placesRouter;

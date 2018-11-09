@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import FavoritesCard from './FavoritesCard.js';
 import axios from 'axios';
+import FavoritesCard from './FavoritesCard.js';
 
 class Favorites extends Component{
 state = {
   fav: []
 }
   componentDidMount() {
-    axios.get('/favorites')
+    axios.get(`/favorites/${this.props.match.params.id}`)
     .then(res=> {
       this.setState(preState => ({
         fav: res.data.data
@@ -20,6 +20,7 @@ state = {
     const allFavorites = this.state.fav.map((favorites) => {
       return(
           <FavoritesCard
+          {...this.props}
           favorites={favorites}
           key = {favorites.id}
           />

@@ -156,9 +156,7 @@ handleLogin(e) {
         </button>
       </div>
     }
-        {this.state.fireRedirect
-          ? <Redirect push to={`/places/${this.state.newId}`} />
-          : ''}
+        {this.state.fireRedirect ? <Redirect push to={`/places/${this.state.newId}`} /> : ''}
         </div>
     </div>
       )
@@ -167,8 +165,3 @@ handleLogin(e) {
 
 
 export default Login;
-
-        // <div className ="box-container">
-        //   {this.state.isLoginOpen && <LoginBox />}
-        // </div>
-
