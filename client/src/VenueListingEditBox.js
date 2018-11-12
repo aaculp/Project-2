@@ -10,7 +10,7 @@ class VenueListingEditBox extends Component{
     venue_address: '',
     reviews: '',
     rating: '',
-    fireRedirect: false,
+    fireRedirect: false
   }
 
   handleInputChange(e){
@@ -43,9 +43,9 @@ class VenueListingEditBox extends Component{
       return(
         <div className='edit-box-container'>
           <form
+          className='form-container'
           onSubmit ={(e) => this.handleFormSubmit(e)} >
           <h3>{this.props.current.name}</h3>
-          <p className='venue-address'>{this.props.current.id}</p>
           <label>Review</label>
           <input
           type="text"

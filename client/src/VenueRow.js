@@ -1,4 +1,5 @@
 import React from 'react';
+
 function VenueRow(props){
 
   function favoriteVenue(id){
@@ -9,12 +10,10 @@ function VenueRow(props){
 
     return(
       <div className="venue-container">
-        <div className="venue-container-footer">
-          <p> Name:{props.venuePath.name}</p>
+          <p>{props.venuePath.name}</p>
+          <div className="venue-container-footer">
           <p className='venue-address'>Address: {props.venuePath.location.address}</p>
-          <p className='venue-count'>People in Venue: {props.venuePath.hereNow.count}
-
-          </p>
+          <p className='venue-count'>People in Venue: {props.venuePath.hereNow.count}</p>
           <button
           className = 'venue-favorite'
           onClick = {() => favoriteVenue(props.venuePath.id)}
