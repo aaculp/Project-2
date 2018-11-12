@@ -21,9 +21,9 @@ CREATE TABLE IF NOT EXISTS fav (
   rating INT
 );
 
-CREATE TABLE IF NOT EXISTS venues (
-  id BIGSERIAL PRIMARY KEY,
-  name VARCHAR(255),
-  address VARCHAR(255),
-  fav_id INT REFERENCES fav(id)
-);
+-- CREATE TABLE IF NOT EXISTS venues (
+--   id BIGSERIAL PRIMARY KEY,
+--   name VARCHAR(255),
+--   address VARCHAR(255),
+--   fav_id INT REFERENCES fav(id)
+-- );
