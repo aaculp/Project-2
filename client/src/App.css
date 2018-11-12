@@ -284,7 +284,6 @@ body {
     background-color: red;
     color: white; }
   .venue-container .venue-container-footer {
-    border: 1px solid blue;
     color: #6ac8ee;
     font-size: 10px;
     font-weight: bold;
@@ -337,5 +336,10 @@ body {
     font-family: ProximaNovaBold;
     text-transform: uppercase;
     margin:0;
+}
 
+.venue-address {
+  font-size: 25px;
+  text-align: center;
+  font-weight: 100%;
 }
