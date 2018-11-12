@@ -7,6 +7,8 @@ const placesController = require('../controller/controller');
 // placesRouter.get('/login', placesController.loginIndex)
 // placesRouter.post('/login', placesController.loginCreate);
 placesRouter.get('/', placesController.index);
+// placesRouter.post('/', authHelpers.loginRequired, placesController.create);
+
 placesRouter.post('/', authHelpers.loginRequired, placesController.create);
 
 placesRouter.get('/:id', authHelpers.loginRequired, placesController.show);

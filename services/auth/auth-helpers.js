@@ -10,15 +10,15 @@ function loginRedirect(req, res, next) {
   User.findByUserName(req.body.username)
     .then( user => {
       console.log('this is user: ', user)
+      req.session.user = user;
       res.locals.user = user
-       if (user) return next();
+      console.log(req.session.user)
+       if (req.session.user) next();
     })
-
 }
 
 function loginRequired(req, res, next) {
-  if (!req.user) return res.redirect('/auth/login');
-  return next();
+  if (req.session.user) next()
 }
 
 module.exports = {

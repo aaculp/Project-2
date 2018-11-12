@@ -25,7 +25,6 @@ class VenueListings extends Component {
     key={d.id}
     onClick = {(id) => this.handleChange(id)}
     />)
-  console.log(this.props.location.pathname)
   return(
     <div className="allvenues">
       <div className='venue-list'>
@@ -35,9 +34,11 @@ class VenueListings extends Component {
         <div className="venue-section">
           {allVenues}
         </div>
-        <VenueListingEditBox current = {this.state.current} { ...this.props }/>
-        <div className='venue-map'>
-          <Mapbox />
+        <div className='venue-edit'>
+          <VenueListingEditBox current = {this.state.current} { ...this.props }/>
+          <div className='venue-map'>
+            <Mapbox />
+          </div>
         </div>
       </div>
     </div>

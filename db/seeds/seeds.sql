@@ -1,7 +1,7 @@
 \c places
 
 
-INSERT INTO users VALUES (DEFAULT,'aaronculp', 'generalassembly@gmail.com');
+INSERT INTO users VALUES (DEFAULT,'aaronculp', 'generalassembly@gmail.com',);
 INSERT INTO users VALUES (DEFAULT,'jonathangarces', 'generalassembly@gmail.com');
 INSERT INTO users VALUES (DEFAULT,'samischonefeld', 'generalassembly@gmail.com');
 
