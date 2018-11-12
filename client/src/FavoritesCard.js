@@ -68,7 +68,6 @@ class FavoritesCard extends Component{
     }))
   }
 
-// window.location.replace('/something')
 render(){
 
   return(

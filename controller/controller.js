@@ -30,13 +30,14 @@ placesController.show = (req, res) => {
 };
 
 placesController.create = (req, res) => {
+  console.log(req.session.user)
   Places.create({
     users_id: req.body.users_id,
     venue_name: req.body.venue_name,
     venue_address: req.body.venue_address,
     reviews: req.body.reviews,
     rating: req.body.rating,
-  }, req.user.id)
+  }, req.session.user.id)
     .then(fav => {
       res.json({
         message: 'ok',
@@ -83,36 +84,36 @@ placesController.destroy = (req, res) => {
     });
 };
 
-placesController.loginIndex = (req, res) => {
-  Places.findAllUsers()
-    .then(users => {
-      res.json({
-        message: 'ok',
-        data: users,
-      });
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json({ err });
-    });
-};
+// placesController.loginIndex = (req, res) => {
+//   Places.findAllUsers()
+//     .then(users => {
+//       res.json({
+//         message: 'ok',
+//         data: users,
+//       });
+//     })
+//     .catch(err => {
+//       console.log(err);
+//       res.status(500).json({ err });
+//     });
+// };
 
-placesController.loginCreate = (req, res) => {
-  Places.loginCreate({
-    username: req.body.username,
-    password: req.body.password,
-  })
-    .then(users => {
-      res.json({
-        message: 'ok',
-        data: users,
-      });
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json({ err });
-    });
-};
+// placesController.loginCreate = (req, res) => {
+//   Places.loginCreate({
+//     username: req.body.username,
+//     password: req.body.password,
+//   })
+//     .then(users => {
+//       res.json({
+//         message: 'ok',
+//         data: users,
+//       });
+//     })
+//     .catch(err => {
+//       console.log(err);
+//       res.status(500).json({ err });
+//     });
+// };
 
 
 module.exports = placesController;

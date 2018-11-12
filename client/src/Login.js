@@ -14,19 +14,21 @@ class Login extends Component {
       newId: '',
       fireRedirect: false,
       toggleLogin: false,
-      toggleRegister: false,
+      toggleRegister: true,
     }
   }
 
   toggleLogin() {
     this.setState(prevState => ({
-      toggleLogin: !prevState.toggleLogin
+      toggleLogin: !prevState.toggleLogin,
+      toggleRegister: !prevState.toggleRegister
     }))
   }
 
   toggleRegister() {
     this.setState(prevState => ({
-      toggleRegister: !prevState.toggleRegister
+      toggleRegister: !prevState.toggleRegister,
+      toggleLogin: !prevState.toggleLogin
     }))
   }
 
@@ -38,7 +40,7 @@ class Login extends Component {
     }))
   }
 
-  async handleSubmit(e) {
+  handleSubmit(e) {
     e.preventDefault()
     axios.post('/auth/register', {
       username: this.state.username,
@@ -47,7 +49,6 @@ class Login extends Component {
       lastname: this.state.lastname,
       email: this.state.email
     }).then(res => {
-
       console.log('this is res.data.user: ', res)
       this.setState({
         newId: res.data.user.id,
@@ -57,8 +58,6 @@ class Login extends Component {
   }
 
 handleLogin(e) {
-
-  console.log('hitting')
   e.preventDefault()
   axios.post('/auth/login', {
     username: this.state.username,
@@ -70,11 +69,9 @@ handleLogin(e) {
       this.setState({
       newId: res.data.user.id,
       fireRedirect: true
-    })
+      })
     }
-
-})
-
+  })
 }
 
   render(){
@@ -83,7 +80,7 @@ handleLogin(e) {
         <div className ='box-controller'>
         <button onClick={() => this.toggleLogin()}>Log In</button>
         {this.state.toggleLogin &&
-        <div>
+        <div className = 'login-container'>
         <input
           type='text'
           name='username'
@@ -93,7 +90,7 @@ handleLogin(e) {
           onChange={(e) => this.handleInputChange(e)}
           />
         <input
-          type='text'
+          type='password'
           name='password'
           value={this.state.password}
           placeholder='Password'
@@ -110,7 +107,7 @@ handleLogin(e) {
         <button onClick={() => this.toggleRegister()}>Register</button>
         {this.state.toggleRegister &&
 
-        <div>
+        <div className='register-container'>
         <input
           type='text'
           name='username'
@@ -122,13 +119,13 @@ handleLogin(e) {
         <input
           name='email'
           type='email'
-          placeholder='email'
+          placeholder='Email'
           value={ this.state.email }
           onChange={(e) => this.handleInputChange(e)}
           required
         />
         <input
-          type='text'
+          type='password'
           name= 'password'
           value={this.state.password}
           placeholder='Password'
@@ -138,14 +135,14 @@ handleLogin(e) {
         <input
           name='firstname'
           type='text'
-          placeholder='first name'
+          placeholder='First Name'
           onChange={(e) => this.handleInputChange(e)}
           required
         />
         <input
           name='lastname'
           type='text'
-          placeholder='last name'
+          placeholder='Last Name'
           onChange={(e) => this.handleInputChange(e)}
           required
         />
