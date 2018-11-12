@@ -78,7 +78,7 @@ handleLogin(e) {
     return(
     <div className = "loginPage-Container">
         <div className ='box-controller'>
-        <button onClick={() => this.toggleLogin()}>Log In</button>
+        <button onClick={() => this.toggleLogin()} id='login-button'>Log In</button>
         {this.state.toggleLogin &&
         <div className = 'login-container'>
         <input
@@ -104,7 +104,7 @@ handleLogin(e) {
       </div>
     }
 
-        <button onClick={() => this.toggleRegister()}>Register</button>
+        <button onClick={() => this.toggleRegister()} id='login-button'>Register</button>
         {this.state.toggleRegister &&
 
         <div className='register-container'>

@@ -1,6 +1,6 @@
 body {
   margin: 0 auto;
-  border: 5px solid black; }
+}
 
    /*login css*/
 .outside-container{
@@ -26,10 +26,7 @@ body {
   border-radius: 10px;
 }
 
-  .box-controller {
-    display: flex;
-    flex-direction: column;
-  }
+
 
   .login-container {
     display: flex;
@@ -52,7 +49,6 @@ body {
   font-family: "Roboto", sans-serif;
   margin-right:25%;
   margin-bottom:20px;
-
   outline: 0;
   width: 30%;
   border: 0;
@@ -174,8 +170,9 @@ body {
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
-    margin-right: 100px;
     height: 50px;
+    text-align: center;
+    margin-right: 40%;
   }
 
   .header input {
@@ -264,7 +261,7 @@ body {
   flex-direction: row; }
 
 .venue-container {
-  border: 2px solid blue;
+  border: 1px solid gray;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -288,8 +285,7 @@ body {
     color: white; }
   .venue-container .venue-container-footer {
     border: 1px solid blue;
-    background-color: blue;
-    color: white;
+    color: #6ac8ee;
     font-size: 10px;
     font-weight: bold;
     height: 150px;
@@ -324,4 +320,22 @@ body {
   font-size: 20px;
   text-align: center;
   font-weight: bold;
+}
+
+.logo{
+  height:100%;
+  width:15%;
+}
+
+.venue-name{
+  color:#430098;
+  border-bottom: 4px solid #FF4338;
+
+    color: #430098;
+    display: inline-block;
+    font-size: 20px;
+    font-family: ProximaNovaBold;
+    text-transform: uppercase;
+    margin:0;
+
 }

@@ -5,7 +5,7 @@ function Header(props) {
 
   return(
     <div className="header">
-      <h1>Who Has Time?</h1>
+      <img src='https://res.cloudinary.com/dcqmhmmt5/image/upload/v1542060054/logo_simplified.png'  class='logo'/>
       <Form
         handleInputChange={props.handleInputChange}
         onFormSubmit={props.onFormSubmit}

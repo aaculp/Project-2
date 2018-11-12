@@ -28,7 +28,6 @@ class VenueListings extends Component {
   return(
     <div className="allvenues">
       <div className='venue-list'>
-        <h1>Venues: {this.props.buttonInput.toUpperCase()}</h1>
       </div>
       <div className='venue-align'>
         <div className="venue-section">
