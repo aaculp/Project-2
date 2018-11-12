@@ -12,7 +12,10 @@ function VenueRow(props){
       <div className="venue-container">
           <p class='venue-name'>{props.venuePath.name}</p>
           <div className="venue-container-footer">
-          <p className='venue-address'>{props.venuePath.location.address}</p>
+          <div className='div-address'>
+            <p className='venue-address'>{props.venuePath.location.address}</p>
+            <div className='line-bar'></div>
+            </div>
           <button
           className = 'venue-favorite'
           onClick = {() => favoriteVenue(props.venuePath.id)}

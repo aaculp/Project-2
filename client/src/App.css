@@ -145,7 +145,6 @@ body {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: black;
   background-color: white;
 }
 
@@ -159,7 +158,6 @@ body {
     margin-right: 500px;
     height: 34px;
     border-radius: 3px;
-    border: solid 1px #cccccc
   }
 
   .header .input {
@@ -221,7 +219,11 @@ body {
     justify-content: space-around;
     height: 800px;
     width: 70%;
-    overflow: scroll; }
+    margin-left: 2%;
+    margin-top:2%;
+    overflow: scroll;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, .5);
+    margin-bottom: 3%; }
   .allvenues .venue-map {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -231,11 +233,15 @@ body {
     -ms-flex-direction: row;
     flex-direction: row;
     width: 30%;
-    height: 500px; }
+    height: 100%; }
 
   .allvenues .venue-edit {
     display: flex;
     flex-direction: column;
+    border:2px solid yellow;
+    margin-left: 20px;
+    margin-top:2%;
+    margin-bottom: 3%;
   }
   .edit-box-container {
     display: flex;
@@ -277,14 +283,13 @@ body {
   height: 200px;
   width: 25%;
   margin: 5px 0;
-  text-align: center; }
+  text-align: center;
+  border-radius: 20px; }
   .venue-container .venue-container-header {
-    border: 1px solid red;
     text-align: center;
     background-color: red;
     color: white; }
   .venue-container .venue-container-footer {
-    color: #6ac8ee;
     font-size: 10px;
     font-weight: bold;
     height: 150px;
@@ -328,18 +333,27 @@ body {
 
 .venue-name{
   color:#430098;
-  border-bottom: 4px solid #FF4338;
-
-    color: #430098;
     display: inline-block;
-    font-size: 20px;
+    font-size: 25px;
     font-family: ProximaNovaBold;
     text-transform: uppercase;
-    margin:0;
+    margin-top:5%;
+    width:100%;
 }
 
 .venue-address {
   font-size: 25px;
   text-align: center;
   font-weight: 100%;
+  color:green;
+  margin:0;
+}
+
+.venue-favorite{
+  margin-bottom: 20px;
+}
+
+.line-bar{
+  height:3.5px;
+  background-color: red;
 }
