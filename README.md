@@ -10,10 +10,10 @@ You are **responsible** for scheduling time with your squad to seek approval for
 |---|---| ---|
 |Day 1| Project Description | Complete
 |Day 2| Wireframes / Priority Matrix / Functional Components | Complete
-|Day 3| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|Day 4| Pseudocode / actual code | Incomplete
-|Day 5| Initial Clickable Model  | Incomplete
-|Day 6| MVP | Incomplete
+|Day 3| Core Application Structure (HTML, CSS, etc.) | Complete
+|Day 4| Pseudocode / actual code | Complete
+|Day 5| Initial Clickable Model  | Complete
+|Day 6| MVP | Complete
 |Day 7| Present | Incomplete
 
 
@@ -84,17 +84,17 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| CSS | H | 9hrs| 0hrs | 0hrs |
-| Favoriting | H | 3hrs| 0hrs | 0hrs |
-| API Call | H | 1hrs| 0hrs | 0hrs |
-| Model | H | 15hrs| 0hrs | 0hrs |
-| Component(View) | H | 12hrs| 0hrs | 0hrs |
-| Controller| H | 10hrs| 0hrs | 0hrs |
+| CSS | H | 9hrs| 9hrs | 9hrs |
+| Favoriting | H | 3hrs| 2hrs | 2hrs |
+| API Call | H | 1hrs| 1hrs | 1hrs |
+| Model | H | 15hrs| 12hrs | 12hrs |
+| Component(View) | H | 12hrs| 7hrs | 7hrs |
+| Controller| H | 10hrs| 9hrs | 9hrs |
 | Uploading Images | L | 3hrs| 0hrs | 0hrs |
-| User Authorization | L | 8hrs| 0hrs | 0hrs |
+| User Authorization | L | 8hrs| 13hrs | 13hrs |
 | Mapping Pin Drops | L | 7hrs| 0hrs | 0hrs |
 | Pose NPM Package| L | 3hrs| 0hrs | 0hrs |
-| Total | L | 71hrs| 0hrs | 0hrs |
+| Total | L | 71hrs| 53hrs | 53hrs |
 
 ## ERD
 
@@ -116,16 +116,17 @@ Helper functions should be generic enought that they can be reused in other appl
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
+app.use('/auth', authRoutes);
+app.use('/user', userRoutes);
+app.use('/favorites', placesRoutes);
+app.use('/login', loginRoutes);
 ```
 
 ## Change Log
- Use this section to document what changes were made and the reasoning behind those changes.  
+We decided not to try to drop the locations on the Map, just didn't have time. Also didn't have time to use the React Pose API.
 
 ## Issues and Resolutions
- Use this section to list of all major issues encountered and their resolution.
+The big issue was User Auth. Probably could of went without it and focused more on design and other things but we really wanted to learn it!
 
 #### SAMPLE.....
 **ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                

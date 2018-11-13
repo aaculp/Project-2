@@ -17,8 +17,8 @@ body {
     display: flex;
     flex-direction: column;
     z-index: 1;
-    margin-left: 350px;
-    margin-top: 150px;
+    margin-left: 500px;
+    margin-top: 75px;
     background-color: white;
     width: 25%;
     text-align: center;
@@ -302,6 +302,7 @@ body {
   font-size: 20px;
   text-align: center;
   font-weight: bold;
+  position: relative;
 }
 
 .logo{
