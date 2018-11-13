@@ -1,6 +1,6 @@
 # Project Overview
 
-https://dashboard.heroku.com/apps/group-project-deploy/deploy/heroku-git
+https://group-project-deploy.herokuapp.com/
 
 ## Project Schedule
 
