@@ -14,7 +14,7 @@ const loginRoutes = require('./routes/routes');
 const authRoutes = require('./routes/auth-routes');
 const userRoutes = require('./routes/user-routes');
 
-const port = process.env.port || 3001;
+const port = process.env.PORT || 3001;
 
 
 app.use(logger('dev'));
@@ -43,7 +43,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('*', (req, res) => {
-  res.status(400).json({
+  res.status(404).json({
     message: 'Endpoint not found!',
   });
 });
