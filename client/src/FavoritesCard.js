@@ -71,15 +71,15 @@ class FavoritesCard extends Component{
   render(){
     return(
       <div className="favorite-card">
-        <div className = "venue-info">
+        <div className="venue-info">
           <h3>{this.props.favorites.venue_name}</h3>
           <h3>Your Review</h3>
           <p>{this.props.favorites.reviews}</p>
           <h3>Your Rating</h3>
           <p>{this.props.favorites.rating}</p>
+          <button onClick={() => this.toggleEditForm()}>EDIT</button>
         </div>
         <div className="edit-delete-buttons">
-          <button onClick={() => this.toggleEditForm()}>EDIT</button>
           {this.state.toggleEdit &&
           <form className='edit-delete-form'>
             <input

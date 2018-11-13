@@ -77,8 +77,10 @@ handleLogin(e) {
   render(){
     return(
     <div className = "loginPage-Container">
-        <div className ='box-controller'>
+        <div className='login-buttons'>
         <button onClick={() => this.toggleLogin()} id='login-button'>Log In</button>
+        <button onClick={() => this.toggleRegister()} id='login-button'>Register</button>
+        </div>
         {this.state.toggleLogin &&
         <div className = 'login-container'>
         <input
@@ -103,8 +105,6 @@ handleLogin(e) {
           </button>
       </div>
     }
-
-        <button onClick={() => this.toggleRegister()} id='login-button'>Register</button>
         {this.state.toggleRegister &&
 
         <div className='register-container'>
@@ -154,9 +154,8 @@ handleLogin(e) {
       </div>
     }
         {this.state.fireRedirect ? <Redirect push to={`/places/${this.state.newId}`} /> : ''}
-        </div>
-    </div>
-      )
+      </div>
+    )
   }
 }
 

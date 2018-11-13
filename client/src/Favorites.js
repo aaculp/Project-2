@@ -29,7 +29,9 @@ state = {
     return(
   <div>
     <h1> YOUR PLACES</h1>
-  {allFavorites}
+    <div className='favorites-container'>
+      {allFavorites}
+    </div>
   </div>
       )
   }

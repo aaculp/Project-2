@@ -8,7 +8,7 @@ class Mapbox extends Component {
   state = {
     viewport: {
       width: 400,
-      height: 600,
+      height: 640,
       latitude: 40.740,
       longitude: -73.991,
       zoom: 14
@@ -18,7 +18,7 @@ class Mapbox extends Component {
 
   render() {
     return(
-      <div className='map'>
+      <div className='venue-map'>
       <ReactMapGL
         {...this.state.viewport}
         mapStyle="mapbox://styles/mapbox/streets-v10"
