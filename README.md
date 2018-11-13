@@ -61,13 +61,10 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 ## React Architectural Design
 
-Define the the React components and the architectural design of your app.
-
 App Architecture: https://imgur.com/c0QuQQy
 
 ## Functional Components
 
-Based on the initial logic defined in the previous sections try and breakdown the logic further into stateless/stateful components. 
 
 | Component | Description | 
 | --- | :---: |  
@@ -80,7 +77,7 @@ Based on the initial logic defined in the previous sections try and breakdown th
 |Edit Notes Container| It will render the function component, which includes an Image or an Icon, Name, and Address.|
 
 
-Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe.
+## Time Chart
 
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
@@ -91,10 +88,10 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Component(View) | H | 12hrs| 7hrs | 7hrs |
 | Controller| H | 10hrs| 9hrs | 9hrs |
 | Uploading Images | L | 3hrs| 0hrs | 0hrs |
-| User Authorization | L | 8hrs| 13hrs | 13hrs |
+| User Authorization | L | 8hrs| 17hrs | 17hrs |
 | Mapping Pin Drops | L | 7hrs| 0hrs | 0hrs |
 | Pose NPM Package| L | 3hrs| 0hrs | 0hrs |
-| Total | L | 71hrs| 53hrs | 53hrs |
+| Total | L | 71hrs| 58hrs | 58hrs |
 
 ## ERD
 
@@ -107,9 +104,12 @@ Helper functions should be generic enought that they can be reused in other appl
 | Function | Description | 
 | --- | :---: |  
 | Capitalize | This will capitalize the first letter in a string of text | 
+| Input Change | This captures the input change on the search input |
+| Toggle | Toggles Login / Register Form |
+
 
 ## Additional Libraries
- Use this section to list all supporting libraries and thier role in the project. 
+We wanted to use React Pose.
 
 ## Code Snippet
 
