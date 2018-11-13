@@ -28,12 +28,12 @@ class VenueListings extends Component {
   return(
     <div className="allvenues">
       <div className='venue-list'>
-        <h1>Venues: {this.props.buttonInput.toUpperCase()}</h1>
       </div>
       <div className='venue-align'>
         <div className="venue-section">
           {allVenues}
         </div>
+
         <div className='venue-edit'>
           <VenueListingEditBox current = {this.state.current} { ...this.props }/>
           <div className='venue-map'>
