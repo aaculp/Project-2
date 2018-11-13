@@ -28,7 +28,7 @@ state = {
     })
     return(
   <div>
-    <h1>USERNAME HERE PLACES</h1>
+    <h1> YOUR PLACES</h1>
   {allFavorites}
   </div>
       )

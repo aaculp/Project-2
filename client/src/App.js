@@ -58,7 +58,7 @@ class App extends Component {
             venueId={this.state.venueId}
           />)} />
           <Route path='/register' component={Login} />
-          <Route path='/' render={(props) => (<Login {...props}/>)} />
+          <Route path='/' render={(props) => (<Login {...props} />)} />
           </Switch>
           <Footer />
         </div>

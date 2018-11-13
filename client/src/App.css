@@ -308,6 +308,32 @@ body {
   .venue-container .venue-count {
     font-size: 20px; }
 
+.favorite-card {
+  background-color: #430098;
+  color: white;
+  border: 1px solid red;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.venue-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-delete-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+
 .footer {
   display: -webkit-box;
   display: -ms-flexbox;

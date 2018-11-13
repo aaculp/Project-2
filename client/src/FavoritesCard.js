@@ -68,50 +68,46 @@ class FavoritesCard extends Component{
     }))
   }
 
-render(){
-  return(
-    <section>
-      <div>
-        <div className = "venue_info">
+  render(){
+    return(
+      <div className="favorite-card">
+        <div className = "venue-info">
           <h3>{this.props.favorites.venue_name}</h3>
-        </div>
-        <div className = "added_info">
           <h3>Your Review</h3>
           <p>{this.props.favorites.reviews}</p>
           <h3>Your Rating</h3>
           <p>{this.props.favorites.rating}</p>
         </div>
-        <div className="edit_delete_buttons">
+        <div className="edit-delete-buttons">
           <button onClick={() => this.toggleEditForm()}>EDIT</button>
           {this.state.toggleEdit &&
-        <form>
-        <input
-        type="text"
-        name="reviews"
-        value={this.state.reviews}
-        placeholder="New Review?"
-        onChange={(e) => this.handleInputChange(e)} />
-        <input
-        type="number"
-        name="rating"
-        value={this.state.rating}
-        placeholder="New Rating?"
-        onChange={(e) => this.handleInputChange(e)} />
-        <button
-        type="submit"
-        onClick={(e) => this.handleEditSubmit(e)}>Update My Review!</button>
-        </form>
-    }
-          <button onClick={() => this.deleteVenue()}>DELETE</button>
-{/*        {this.state.fireRedirect
-          ? <Redirect push to={`/places/${this.props.match.params.id}`} />
-          : ''}*/}
+          <form className='edit-delete-form'>
+            <input
+              type="text"
+              name="reviews"
+              value={this.state.reviews}
+              placeholder="New Review?"
+              onChange={(e) => this.handleInputChange(e)}
+            />
+            <input
+              type="number"
+              name="rating"
+              value={this.state.rating}
+              placeholder="New Rating?"
+              onChange={(e) => this.handleInputChange(e)}
+            />
+            <button
+              type="submit"
+              onClick={(e) => this.handleEditSubmit(e)}>Update My Review!
+            </button>
+            <button onClick={() => this.deleteVenue()}>DELETE</button>
+          </form>
+          }
         </div>
       </div>
-    </section>
     )
-}
-
+  }
 }
 
 export default FavoritesCard;
+// {this.state.fireRedirect ? <Redirect push to={`/places/${this.props.match.params.id}`} /> : ''}
